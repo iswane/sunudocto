@@ -1,6 +1,6 @@
 node {
   stage("Clone the project") {
-    git branch: 'main', url: 'https://github.com/nkchauhan003/jenkins-demo.git'
+    git branch: 'main', url: 'https://github.com/iswane/sunudocto.git'
   }
 
   stage("Compilation") {
@@ -8,8 +8,6 @@ node {
   }
 
   stage("Tests") {
-    stage("Runing unit tests") {
-      sh "./mvnw test -Punit"
-    }
+    sh "./mvnw test"
   }
 }
