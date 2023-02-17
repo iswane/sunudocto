@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+#  sunudoctor_dev_api:
+#    build:
+#      context: .
+#    image: maven/builder:0.0.1
+#    container_name: sunudoctor_dev_api
+#    ports:
+#      - "8088:8080"
+#    environment:
+#      - POSTGRES_USER=sunudoctor
+#      - POSTGRES_PASSWORD=sunudoctor
+#      - POSTGRES_DB=sunudoctor
+#    volumes:
+#      - "./src:/build/src"
+#      - "./target:/build/target:cached"
+#    command: "mvn spring-boot:run"
+#    depends_on:
+#      - sunudoctor_dev_db
+  sunudoctor_dev_db:
+    container_name: sunudoctor_dev_db
+    image: "postgres:13"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=sunudoctor
+      - POSTGRES_PASSWORD=sunudoctor
+      - POSTGRES_DB=sunudoctor
+    volumes:
+      - sunudoctor_dev_data:/var/lib/postgresql/data
+volumes:
+  sunudoctor_dev_data: { }

@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    username: sunudoctor
+    url: jdbc:postgresql://localhost:5432/sunudoctor
+    password: 'sunudoctor'
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8088
